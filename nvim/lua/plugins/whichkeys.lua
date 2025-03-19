@@ -38,14 +38,9 @@ return {
     },
 
     spec = {
-      { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
       { '<leader>b', group = '[B]uffers', mode = { 'n' } },
-      { '<leader>d', group = '[D]ocument' },
-      { '<leader>r', group = '[R]ename' },
-      { '<leader>s', group = '[S]earch' },
-      { '<leader>w', group = '[W]orkspace' },
+      { '<leader>l', group = '[L]sp', mode = { 'n', 'x' } },
       { '<leader>t', group = '[T]oggle' },
-      { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
     },
   },
 }
