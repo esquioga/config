@@ -6,6 +6,7 @@ return {
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
     'MunifTanjim/nui.nvim',
   },
+  lazy = false,
   cmd = 'Neotree',
   keys = {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
@@ -15,8 +16,11 @@ return {
       window = {
         mappings = {
           ['\\'] = 'close_window',
+          ["l"] = "open",
         },
       },
     },
   },
 }
+
+
