@@ -16,7 +16,7 @@ return {
       window = {
         mappings = {
           ['\\'] = 'close_window',
-          ["l"] = "open",
+          ['l'] = 'open',
         },
       },
     },
