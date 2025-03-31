@@ -49,6 +49,14 @@ return {
       vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
       vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[F]ind [R]esume' })
       vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
+
+      -- lsp
+      vim.keymap.set('n', '<leader>lr', builtin.lsp_references, { desc = 'Lsp Reference' })
+      vim.keymap.set('n', '<leader>ld', builtin.lsp_definitions, { desc = 'Lsp Definition' })
+      vim.keymap.set('n', '<leader>li', builtin.lsp_definitions, { desc = 'Lsp Implementation' })
+      vim.keymap.set('n', '<leader>lt', builtin.lsp_definitions, { desc = 'Lsp Type Definition' })
+
+      -- buffer
       vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind [b]uffer' })
 
       -- Slightly advanced example of overriding default behavior and theme
