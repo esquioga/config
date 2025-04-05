@@ -16,6 +16,7 @@ return {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       { 'j-hui/fidget.nvim',       opts = {} },
       'hrsh7th/cmp-nvim-lsp',
+      { 'mfussenegger/nvim-jdtls' }
     },
     config = function()
       --  This function gets run when an LSP attaches to a particular buffer.
@@ -43,7 +44,17 @@ return {
           map('<leader>la', vim.lsp.buf.code_action, 'Code [A]ction', { 'n', 'x' })
           map('<leader>lf', vim.lsp.buf.format, '[F]ormat code', { 'n', 'x' })
           map('<leader>lk', vim.lsp.buf.hover, 'Hover toggle', { 'n', 'x' })
+          map('<leader>lj',
+            function()
+              vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.ERROR })
+            end,
+            'Go to next error', { 'n' })
+          map('<leader>lk',
 
+            function()
+              vim.lsp.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.ERROR })
+            end,
+            'Go to previous error', { 'n' })
           -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client
           ---@param method vim.lsp.protocol.Method
@@ -190,7 +201,8 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'jdtls',
-        'java-debug-adapter'
+        'java-debug-adapter',
+        'js-debug-adapter'
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

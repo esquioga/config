@@ -35,8 +35,10 @@ return {
         defaults = {
           layout_strategy = 'flex',
           layout_config = {
-            flip_columns = 180,
-            prompt_position = 'bottom',
+            flex = {
+              flip_columns = 180,
+              prompt_position = 'bottom',
+            },
             horizontal = {
               preview_width = 0.6,
               width = 0.66,
